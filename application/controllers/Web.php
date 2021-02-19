@@ -25,9 +25,17 @@ class Web extends CI_Controller{
   // Load Homepage
   public function index(){
     
-    $data["category_list"] = $this->db->get('category')->result_array();      
+    $data["category_list"] = $this->db->get_where('category', array('status' => 'A' ))->result_array();      
     $this->load->vars($data);
     $this->load->view('web/index');
+
+  }
+
+    public function single(){
+    
+    $data["category_list"] = $this->db->get_where('category', array('status' => 'A' ))->result_array();      
+    $this->load->vars($data);
+    $this->load->view('web/single');
 
   }
 

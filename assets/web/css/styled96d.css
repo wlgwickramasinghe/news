@@ -2310,7 +2310,7 @@ body.btAccentLightHeader.btBoxedPage.btBelowMenu .mainHeader:not(.gutter) .port 
 .menuPort nav > ul > li > a,
 .menuPort nav > ul > li > .bt_mega_menu_title {
     line-height: 50px;
-    padding: 0 1.33em;
+    padding: 0 1.3em;
     border-radius: 2px;
     }
 .menuPort nav > ul > li.menu-item-has-children > a,
@@ -23949,7 +23949,7 @@ button.mfp-close:hover {
     font-size: 1.375em;
     }
 .btCategoryTitle.btIcoBigSizeIcon {
-    line-height: 48px;
+    line-height: 28px;
     }
 .btCategoryTitle.btIcoBigSizeIcon .btCategoryTitleTxt h1,
 .btCategoryTitle.btIcoBigSizeIcon .btCategoryTitleTxt h2,
