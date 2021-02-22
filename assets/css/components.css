@@ -141,7 +141,7 @@ a.badge,
  *
  * ---------------------------------------------------------------------------- */
 .sidebar {
-  background-color: #22B0CA;
+  background-color: #526069;
   color: #fff;
   position: relative;
   width: 100%;
@@ -340,7 +340,7 @@ a.badge,
 .navigation > li.active > a,
 .navigation > li.active > a:hover,
 .navigation > li.active > a:focus {
-  background-color: #26A69A;
+  background-color: #2196F3;
   color: #fff;
 }
 .navigation > li.active > a > [class*=text-] {
@@ -765,8 +765,8 @@ a.badge,
     position: absolute;
     top: 0;
     right: -260px;
-    background-color: #26A69A;
-    border: 1px solid #26A69A;
+    background-color: #2196F3;
+    border: 1px solid #2196F3;
     padding: 11px 20px;
     width: 260px;
     text-align: left;
@@ -6161,7 +6161,7 @@ legend.alpaca-container-label {
 .daterangepicker td.active,
 .daterangepicker td.active:hover,
 .daterangepicker td.active:focus {
-  background-color: #26A69A;
+  background-color: #2196F3;
   color: #fff;
   border-radius: 3px;
 }
@@ -6261,7 +6261,7 @@ legend.alpaca-container-label {
 }
 .ranges ul li.active {
   color: #fff;
-  background-color: #26A69A;
+  background-color: #2196F3;
 }
 .ranges .daterangepicker-inputs {
   padding: 12px;
@@ -6572,7 +6572,7 @@ legend.alpaca-container-label {
   right: 2px;
   width: 0;
   height: 0;
-  border-top: 6px solid #26A69A;
+  border-top: 6px solid #2196F3;
   border-left: 6px solid transparent;
 }
 .picker__day--outfocus {
@@ -6596,12 +6596,12 @@ legend.alpaca-container-label {
 .picker--focused .picker__day--highlighted {
   cursor: pointer;
   color: #fff;
-  background-color: #26A69A;
+  background-color: #2196F3;
 }
 .picker__day--selected,
 .picker__day--selected:hover,
 .picker--focused .picker__day--selected {
-  background-color: #26A69A;
+  background-color: #2196F3;
   color: #fff;
 }
 .picker__day--disabled,
@@ -6725,12 +6725,12 @@ legend.alpaca-container-label {
 .picker--focused .picker__list-item--highlighted {
   cursor: pointer;
   color: #fff;
-  background-color: #26A69A;
+  background-color: #2196F3;
 }
 .picker__list-item--selected,
 .picker__list-item--selected:hover,
 .picker--focused .picker__list-item--selected {
-  background-color: #26A69A;
+  background-color: #2196F3;
   color: #fff;
   z-index: 10;
 }
@@ -6824,7 +6824,7 @@ legend.alpaca-container-label {
 }
 .AnyTime-mons .ui-state-highlight,
 .AnyTime-mons .ui-state-highlight:hover {
-  background-color: #26A69A;
+  background-color: #2196F3;
   color: #fff;
 }
 .AnyTime-time .ui-state-highlight,
@@ -7534,7 +7534,7 @@ legend.alpaca-container-label {
 .datepicker table tr td span.active:hover,
 .datepicker table tr td.active.disabled:hover,
 .datepicker table tr td span.active.disabled:hover {
-  background-color: #26A69A;
+  background-color: #2196F3;
   color: #fff;
 }
 .datepicker table tr td span {
@@ -7683,7 +7683,7 @@ legend.alpaca-container-label {
 .datepaginator .pagination > li > .dp-selected,
 .datepaginator .pagination > li > .dp-selected:hover,
 .datepaginator .pagination > li > .dp-selected:focus {
-  background-color: #26A69A;
+  background-color: #2196F3;
   color: #fff;
   width: 140px;
 }
@@ -10681,7 +10681,7 @@ body.stop-scrolling {
   color: #999999;
 }
 .ui-datepicker table td.ui-datepicker-current-day .ui-state-active {
-  background-color: #26A69A;
+  background-color: #2196F3;
   color: #fff;
 }
 .ui-datepicker table td.ui-datepicker-today .ui-state-highlight {
@@ -13614,7 +13614,7 @@ a.plupload_disabled:focus {
   box-shadow: none;
 }
 .plupload_start {
-  background-color: #26A69A;
+  background-color: #2196F3;
 }
 .plupload_filelist {
   margin: 0;
@@ -16447,7 +16447,7 @@ thead .htCollapseButton:after {
 }
 .is-selected .pika-button {
   color: #fff;
-  background-color: #26A69A;
+  background-color: #2196F3;
 }
 .is-today .pika-button:before,
 .is-selected .pika-button:before,
@@ -16467,7 +16467,7 @@ thead .htCollapseButton:after {
 .is-startrange .pika-button,
 .is-endrange .pika-button {
   color: #fff;
-  background: #26A69A;
+  background: #2196F3;
 }
 .is-inrange .pika-button {
   background: #f5f5f5;
