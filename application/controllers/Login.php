@@ -11,6 +11,7 @@ class Login extends CI_Controller{
   $this->load->library('session');
   $this->load->library('form_validation');
   $this->load->model('LoginModel','LoginModel');
+  
 
   }
 
@@ -83,6 +84,8 @@ class Login extends CI_Controller{
 		header("Location:".$new_page);
 
   }
+
+ 
 
 }
 

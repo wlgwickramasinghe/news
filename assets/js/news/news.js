@@ -3,13 +3,15 @@ function save_news() {
 
   base_url = 'http://127.0.0.1/DSMS/'
 
-  data = $('#news_form').serializeArray();
+var formData = new FormData($('#news_form')[0]);
 
   $.ajax({
-    url: base_url+'index.php/news/save_news',
-    type: 'POST',
-    dataType: 'json',
-    data: data
+  url: base_url+'index.php/news/save_news',
+  method:"POST",
+  data: formData, 
+  contentType: false,  
+  cache: false,  
+  processData:false,  
   })
   .done(function() {
     new PNotify({
@@ -17,7 +19,7 @@ function save_news() {
         text:'Form submited without any error',
         addclass: 'alert bg-success alert-styled-left'
     });
-    $('#news_form')[0].reset();
+    // $('#news_form')[0].reset();
      setTimeout(function(){
   window.location = base_url+"index.php/news/view_news?page=news";
   },1000);
@@ -33,16 +35,19 @@ function save_news() {
   });
 }
 
+
 //Update News
 function update_news(){
 
-data = $('#news_form_edit').serializeArray();
+var formData = new FormData($('#news_form_edit')[0]);
 
 $.ajax({
   url: base_url+'index.php/news/update_news',
-  type: 'POST',
-  dataType: 'json',
-  data: data
+  method:"POST",  
+    data: formData,   
+    contentType: false,  
+    cache: false,  
+    processData:false,
 })
 .done(function() {
   new PNotify({

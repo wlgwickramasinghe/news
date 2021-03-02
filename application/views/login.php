@@ -41,7 +41,7 @@
 	}*/
 
 	</style>
-	<title>Viva Mint Dentae Dental Surgery</title>
+	<title></title>
 
 	<!-- Global stylesheets -->
 	<link href="https://fonts.googleapis.com/css?family=Roboto:400,300,100,500,700,900" rel="stylesheet" type="text/css">

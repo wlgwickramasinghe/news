@@ -52,11 +52,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                  <div class="panel-heading">
                   <div class="col-lg-6"> 
                     <h5 class="text-semibold">Country List</h5> 
-                  </div>
-
-                  <div class="col-lg-6 text-right"> 
-                    <button type="button" class="btn btn-primary btn-labeled btn-labeled-right" onclick="location.href='<?php echo base_url();?>index.php/drug/add_drug?page=drug'">Add New Country <b><i class="icon-plus2"></i></b></button>
-                  </div>
+                  </div>           
                
               </div>    
 

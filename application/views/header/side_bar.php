@@ -29,29 +29,18 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
           <!-- Main -->
           <?php $page = $this->input->get('page');
-          if($this->session->UserGroup == "Admin" || $this->session->UserGroup == "Doctor")
+          if($this->session->UserGroup == "Admin" )
           {
 
           ?>
           <li class="navigation-header"><span>Main Menu</span> <i class="icon-menu" title="Main pages"></i></li>
          
 
-          <li class="<?php if (uri_string() == 'user' || $page == 'user') echo "active";?>">
-            <a href="<?php echo base_url();?>index.php?/user/view_user?page=user"><i class="icon-users2"></i> <span>Users</span></a>
-           <!--  <ul> -->
-              <!-- <li class="<?php if (current_url() == base_url().'user') echo "active";?>"><a href="<?php echo base_url();?>index.php/user?page=user">Add User</a></li> -->
-              <!-- <li class="<?php if (current_url() == base_url().'view_user') echo "active";?>"><a href="<?php echo base_url();?>index.php/user/view_user?page=user">View User</a></li> -->
-            <!-- </ul> -->
-          </li>       
+        <!--   <li class="<?php if (uri_string() == 'user' || $page == 'user') echo "active";?>">
+            <a href="<?php echo base_url();?>index.php?/user/view_user?page=user"><i class="icon-users2"></i> <span>Users</span></a>         
+          </li>  -->      
           
-        <?php } ?>
-         <!--  <li class="<?php if (uri_string() == 'patient' || $page == 'patient') echo "active";?>">
-            <a href="<?php echo base_url();?>index.php/patient/view_patient?page=patient"><i class=" icon-accessibility2"></i> <span>Patients</span></a>
-            <ul>
-              <li class="<?php if (current_url() == base_url().'patient') echo "active";?>"><a href="<?php echo base_url();?>index.php/patient/today_patient?page=patient">Today Patients</a></li>
-              <li class="<?php if (current_url() == base_url().'view_patient') echo "active";?>"><a href="<?php echo base_url();?>index.php/patient/view_patient?page=patient">All Patients</a></li>
-            </ul> 
-          </li> -->
+        <?php } ?>     
 
           <?php if($this->session->UserGroup == "Pharmacist" || $this->session->UserGroup == "Doctor" || $this->session->UserGroup == "Admin")
           { ?>
@@ -75,8 +64,10 @@ defined('BASEPATH') OR exit('No direct script access allowed');
           <li class="<?php if (uri_string() == 'advertisment' || $page == 'advertisment') echo "active";?>">
             <a href="<?php echo base_url();?>index.php/drug/view_drug?page=drug"><i class="icon-droplet"></i> <span>Advertisements</span></a>
             <ul>              
-              <li class="<?php if (current_url() == base_url().'view_drug') echo "active";?>"><a href="<?php echo base_url();?>index.php/advertisment/view_advertisment?page=advertisment">Advertisement list </a></li>          
-              <li class="<?php if (current_url() == base_url().'view_dosage') echo "active";?>"><a href="<?php echo base_url();?>index.php/advertisment/add_advertisment?page=advertisment">Add Advertisements</a></li>
+              <li class="<?php if (current_url() == base_url().'view_drug') echo "active";?>"><a href="<?php echo base_url();?>index.php/advertisment/view_advertisment?page=advertisment">Ads list </a></li>          
+              <li class="<?php if (current_url() == base_url().'view_dosage') echo "active";?>"><a href="<?php echo base_url();?>index.php/advertisment/add_advertisment?page=advertisment">Add Ads</a></li>
+              <li class="<?php if (current_url() == base_url().'view_dosage') echo "active";?>"><a href="<?php echo base_url();?>index.php/advertisment/pending_advertisment?page=advertisment">Pending Ads</a></li>
+              <li class="<?php if (current_url() == base_url().'view_dosage') echo "active";?>"><a href="<?php echo base_url();?>index.php/advertisment/approved_advertisment?page=advertisment">Approved Ads</a></li>
             </ul>
           </li>
 
@@ -88,7 +79,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
             </ul>
           </li>
 
-           <li class="<?php if (uri_string() == 'video' || $page == 'video') echo "active";?>">
+           <li class="<?php if (uri_string() == 'video' || $page == 'news') echo "active";?>">
             <a href="<?php echo base_url();?>index.php/drug/view_drug?page=drug"><i class="icon-droplet"></i> <span>News</span></a>
             <ul>              
               <li class="<?php if (current_url() == base_url().'view_drug') echo "active";?>"><a href="<?php echo base_url();?>index.php/news/view_news?page=news">News list </a></li>          

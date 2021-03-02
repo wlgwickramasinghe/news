@@ -31,8 +31,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 					<!-- Main charts -->
 					<div class="row">
 						<div class="col-lg-7">
-
-<form class="form-horizontal form-validate-jquery" action="#" id="news_form_edit" method="POST">
+<form class="form-horizontal form-validate-jquery" action="#" id="news_form_edit" enctype="multipart/form-data" method="POST">
 								<div class="panel panel-flat">
 									<div class="panel-heading">
 										<h5 class="panel-title">News</h5>
@@ -48,7 +47,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 													<i class="icon-circle-down2"></i>
 												</a>
 											</legend>
-											<!-- <?php print_r($edit_news);?>  -->
+											<!-- <?php print_r($edit_news);?>   -->
 											<div class="collapse in" id="demo1">
 											<?php 	for($i=0; $i < count($edit_news);++$i){?>
 												<div class="collapse in" id="demo1">
@@ -65,6 +64,15 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 														<input type="text" required name="content" class="form-control" value="<?php echo $edit_news[$i]["content"] ?>" placeholder="Enter News Content">
 													</div>
 												</div>
+
+												<div class="form-group">
+	<label class="col-lg-3 control-label">image</label>
+	<div class="col-lg-9">
+		<input type="file" name="image_file" value="<?php echo $edit_news[$i]["image"] ?>"  class="form-control"></br>
+		<span class="label label-block label-danger">Select a new image if you need to change the exisiting image, otherwise keep blank</span>
+	</div>
+</br>	
+</div>
 
 												<div class="form-group">
 													<label class="col-lg-3 control-label">News Type<span class="text-danger"> *</label>
@@ -99,6 +107,20 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 															</option>
 
 														<?php } ?>
+													</select> 
+													</div>
+												</div>
+
+												<div class="form-group">
+													<label class="col-lg-3 control-label">Language<span class="text-danger"> *</label>
+													<div class="col-lg-3">
+														<select class="form-control" name="language">
+														<option value="" selected disabled>Please select Language</option>								
+														
+															<option value="Sinhala">Sinhala</option>
+															<option value="English">English</option>
+															<option value="Tamil">Tamil</option>		
+																						
 													</select> 
 													</div>
 												</div>

@@ -103,6 +103,6 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 	</div>
 	<!-- /page container -->
 	<script type = 'text/javascript' src = "<?php echo base_url();
-	         ?>assets/js/drug/drug.js"></script>
+	         ?>assets/js/country/country.js"></script>
 </body>
 </html>

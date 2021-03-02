@@ -13,15 +13,15 @@ function auth() {
     data: { "username":username, "password":password },
   })
   .done(function(res) {
-    if(res == "Admission"){
-      window.location.href = base_url+'index.php/appointment/today_appointment?page=appointment'
+    if(res == "Admin"){
+      window.location.href = base_url+'index.php/country/view_country?page=country'
 
     }else if (res == "Pharmacist") {
-      window.location.href = base_url+'index.php/pharmacy?page=pharmacy'
+      window.location.href = base_url+'index.php/country/view_country?page=country'
       
 
     } else {
-      window.location.href = base_url+'index.php/dashboard'
+      window.location.href = base_url+'index.php/country/view_country?page=country'
 
     }
 

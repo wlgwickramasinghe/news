@@ -66,10 +66,10 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                 <table class="table datatable-column-search-selects">
                   <thead>
                     <tr>
-							  <th>ID</th>
+							                <th>ID</th>
                               <th>Title</th>
-                              <th>News</th>
                               <th>Type</th>
+                              <th>News</th>
                               <th>Category</th>
                               <th>Country</th>
                               <th>Active</th>                             
@@ -77,7 +77,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                           </tr>
                   </thead>
                   <tbody>
-                      <!-- <?php print_r($country_list);?> -->
+                   
                   <?php 	for($i=0; $i < count($news_list);++$i){?>
 
                     <tr>

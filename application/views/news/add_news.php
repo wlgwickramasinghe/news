@@ -17,7 +17,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 					<div class="breadcrumb-line">
 						<ul class="breadcrumb">
-							<li><a href="<?php echo base_url();?>index.php/dashboard"><i class="icon-home2 position-left"></i> Home</a></li>
+							<li><a href=""><i class="icon-home2 position-left"></i> Home</a></li>
 							<li class="active">Add News</li>
 						</ul>
 
@@ -34,8 +34,8 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 					<!-- Main charts -->
 					<div class="row">
 						<div class="col-lg-10">
-
-<form class="form-horizontal form-validate-jquery" action="#" id="news_form" method="POST">
+<form class="form-horizontal form-validate-jquery" action="#" id="news_form" enctype="multipart/form-data" method="POST">
+	 <input type="text" hidden required name="id" value="<?php echo $load_id[0]['MAX(id)']+1; ?>">
 								<div class="panel panel-flat">
 									<div class="panel-heading">
 										<h5 class="panel-title">News</h5>
@@ -63,20 +63,32 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 												<div class="form-group">
 													<label class="col-lg-3 control-label">News Content<span class="text-danger"> *</label>
 													<div class="col-lg-9">
-														<textarea name="content"  class="form-control" placeholder="Enter News Content" rows="5"></textarea>
+														<textarea name="content"  class="form-control" placeholder="Enter News Content" rows="15"></textarea>
 													</div>
 												</div>
 
 												<div class="form-group">
-													<label class="col-lg-3 control-label">News Type<span class="text-danger"> *</label>
-													<div class="col-lg-9">
-														<input type="text" required name="type" class="form-control" placeholder="Enter News Type">
-													</div>
+							<label class="col-lg-3 control-label">image</label>
+								<div class="col-lg-9">
+									<input type="file" name="image_file" class="form-control">
+									<!-- <span class="label label-block label-danger">. jpg file types only</span> -->
+								</div>
+							</div>
+
+											<div class="form-group">
+												<label class="col-lg-3 control-label">News Type<span class="text-danger"> *</label>
+												<div class="col-lg-3">
+													<!-- <input type="text" required name="type" class="form-control" placeholder="Enter News Type"> -->
+												<select class="form-control" name="type">
+													<option value="Breaking_News">Breaking News</option>
+													<option value="Daily_News">Daily News</option>		
+												</select>
 												</div>
+											</div>
 
 												<div class="form-group">
 													<label class="col-lg-3 control-label">News Category<span class="text-danger"> *</label>
-													<div class="col-lg-9">
+													<div class="col-lg-3">
 														<select class="form-control" name="category">
 														<option value="" selected disabled>Please select Category</option>
 														<?php for($i=0; $i < count($category_list);++$i){?>
@@ -91,7 +103,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 												<div class="form-group">
 													<label class="col-lg-3 control-label">News Country<span class="text-danger"> *</label>
-													<div class="col-lg-9">
+													<div class="col-lg-3">
 														<select class="form-control" name="country">
 														<option value="" selected disabled>Please select Country</option>
 														<?php for($i=0; $i < count($country_list);++$i){?>
@@ -100,6 +112,19 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 															</option>
 
 														<?php } ?>
+													</select> 
+													</div>
+												</div>
+
+												<div class="form-group">
+													<label class="col-lg-3 control-label">Language<span class="text-danger"> *</label>
+													<div class="col-lg-3">
+														<select class="form-control" name="language">
+														<option value="" selected disabled>Please select Language</option>								
+
+															<option value="Sinhala">Sinhala</option>
+															<option value="English">English</option>
+															<option value="Tamil">Tamil</option>													
 													</select> 
 													</div>
 												</div>

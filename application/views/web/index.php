@@ -1,4 +1,9 @@
 <?php include 'header.php';?>
+<style type="text/css">
+   .breaking-news{
+      background-color: red;
+   }
+</style>
          <!-- /.mainHeader -->
          <div class="btContentWrap btClear">
             <div class="btContentHolder">
@@ -212,45 +217,88 @@
                            </div>
                         </div>
                      </section>
-                     <section id="bt_section602e168939530"  class="boldSection topMediumSpaced gutter boxed inherit" style="background-color:#f1f1f1  !important;">
-                        <div class="port">
-                           <div class="boldCell">
-                              <div class="boldCellInner">
-                                 <div class="boldRow " >
-                                    <div class="boldRowInner">
-                                       <div class="rowItem col-md-12 col-ms-12  btTextLeft"  data-width="12">
-                                          <div class="rowItemContent" >
-                                             <div class="btCategoryTitle btIcoBigSizeIcon ">      
-                                                 <div class="bg-white">
-                <div class="news col-md-2">
-                  <span class="align-items-center">Today News Headlines</span>              
-                                   
+ <section id="breaking_news"  class="boldSection topMediumSpaced gutter boxed inherit" style="background-color:#f1f1f1  !important;">
+<div class="port">
+<div class="boldCell">
+<div class="boldCellInner">
+   <div class="boldRow " >
+      <div class="boldRowInner">
+         <div class="rowItem col-md-12 col-ms-12  btTextLeft"  data-width="12">
+            <div class="rowItemContent" >
+               <div class=" breaking-news btCategoryTitle btIcoBigSizeIcon ">      
+                   <div class="bg-white">
+<div class="col-md-3">
+ <img class="img-responsive" style="object-fit: cover; padding: 1em;"
+   src="<?php echo base_url();?>assets/news/breaking_news.gif">
+</div>
+<?php $time = ($breaking_news[0]['newstime']); 
+   $current = date('Y-m-d H:i:s'); ?>
+<script type="text/javascript">
+   $(document).ready( function(){
+  var expiry = '<?php echo $time ;?>';
+  // alert(expiry);
+   window.setInterval(function(){
+   var current = '<?php echo $current ;?>';
+   // alert (current);
+   if(current.getTime()>expiry.getTime()){
+      $('#breaking_news').fadeOut();
+   }}, 1000);  });
+</script>
+<div class="col-md-9" style="padding: 1em;">    
+   <?php  for($j=0; $j < count($breaking_news);++$j) { ?>
+<h2 class="h2 text-white my-1"><?php echo $breaking_news[$j]['title']; ?></h2>          
+     <?php } ?>
+</div>
+</div>
                </div>
-               <div class="col-md-10" style="border-top: 5px solid red;">
-                   <marquee class="news-scroll" width="100%" vspace="30%" scrollamount="10" loop="infinite" behavior="scroll" direction="left" onmouseover="this.stop();" onmouseout="this.start();">
-                  <span class="dot"></span> <a href="#">පොදුරාජ්‍ය මණ්ඩලීය අධිකරණ අමාත්‍යවරුන්ගේ රැස්වීමක සභාපතීත්වය මෙරට අධිකරණ ඇමතිට. </a>
-                   <span class="dot"></span> <a href="#">IPL ක්‍රීඩක වෙන්දේසිය අද </a> 
-                   <span class="dot"></span> <a href="" f="#">ශ්‍රී ලංකා කණ්ඩායමේ කොදෙව් සංචාරය පෙබරවාරි 23 ඇරඹේ. </a>
-                   <span class="dot"></span> <a href="" f="#">නීතිපති දෙපාර්තමේන්තුවේ 425කට කොවිඩ් එන්නත </a>
-                   <span class="dot"></span> <a href="" f="#">කටුනායක ගුවන්තොටුපොළ කාර්යබහුල වෙයි </a></marquee>              
-                                   
+               <div class="btClear btSeparator topExtraSmallSpaced bottomSemiSpaced noBorder visible-xs visible-ms" >
+                  <hr>
                </div>
-              
-                           
             </div>
-                                             </div>
-                                             <div class="btClear btSeparator topExtraSmallSpaced bottomSemiSpaced noBorder visible-xs visible-ms" >
-                                                <hr>
-                                             </div>
-                                          </div>
-                                       </div>
-                                    </div>
-                                 </div>             
-                                
-                              </div>
-                           </div>
-                        </div>
-                     </section>
+         </div>
+      </div>
+   </div>             
+  
+</div>
+</div>
+</div>
+</section>
+<section id="bt_section602e168939530"  class="boldSection topMediumSpaced gutter boxed inherit" style="background-color:#f1f1f1  !important;">
+<div class="port">
+<div class="boldCell">
+<div class="boldCellInner">
+   <div class="boldRow " >
+      <div class="boldRowInner">
+         <div class="rowItem col-md-12 col-ms-12  btTextLeft"  data-width="12">
+            <div class="rowItemContent" >
+               <div class="btCategoryTitle btIcoBigSizeIcon ">      
+                   <div class="bg-white">
+<div class="news col-md-2 " style="height:38px; padding: 5px;">
+<span class="align-items-center">Today News Headlines</span>       
+</div>
+<div class="news col-md-10 align-items-center" style="height:38px;">
+<marquee class="news-scroll" style="height:38px;" width="100%" vspace="30%" scrollamount="10" loop="infinite" behavior="scroll" direction="left" onmouseover="this.stop();" onmouseout="this.start();">
+<?php  for($i=0; $i < count($recent_news);++$i) { ?>
+<span class="dot" ></span> 
+<a style="color:white;" href="<?php echo base_url();?>index.php/web/single/<?php echo $recent_news[$i]['id']; ?>"><h6 class="h6 text-white my-1 align-items-center"><?php echo $recent_news[$i]['title']; ?></h6> </a>
+<?php } ?>                
+</marquee>             
+     
+</div>
+</div>
+               </div>
+               <div class="btClear btSeparator topExtraSmallSpaced bottomSemiSpaced noBorder visible-xs visible-ms" >
+                  <hr>
+               </div>
+            </div>
+         </div>
+      </div>
+   </div>             
+  
+</div>
+</div>
+</div>
+</section>
                       <!--Start code-->
 <section id="bt_section602e16894508d"  class="boldSection topMediumSpaced bottomMediumSpaced gutter boxed inherit" >
      <div class="port">
@@ -272,34 +320,29 @@
                         <!--carousel inner-->
                         <div class="carousel-inner">
                             <!--Item slider-->
-                            <div class="carousel-item active">
+                              <?php  for($i=0; $i < count($recent_news);++$i) { ?>
+                            <div class="carousel-item ">
+                            
                                 <div class="card border-0 rounded-0 text-light overflow zoom">
                                     <div class="position-relative">
                                         <!--thumbnail img-->
                                         <div class="ratio_left-cover-1 image-wrapper">
-                                            <a href="https://bootstrap.news/bootstrap-4-template-news-portal-magazine/">
-                                                <img class="img-fluid w-100"
-                                                     src="https://bootstrap.news/source/img1.jpg"
-                                                     alt="Bootstrap news template">
+                                            <a href="<?php echo base_url();?>index.php/web/single/<?php echo $recent_news[$i]['id']; ?>">
+                            <img class="img-fluid " style="object-fit: cover; height: 550px;"
+                          src="<?php echo base_url();?>assets/news/images/<?php echo $recent_news[$i]['id']; ?>.jpg" alt="<?php echo $recent_news[$i]['title']; ?>">
                                             </a>
                                         </div>
                                         <div class="position-absolute p-2 p-lg-3 b-0 w-100 bg-shadow">
-                                            <!--title-->
-                                            <a href="https://bootstrap.news/bootstrap-4-template-news-portal-magazine/">
-                                                <h2 class="h3 post-title text-white my-1">Bootstrap 4 template news portal magazine perfect for news site</h2>
-                                            </a>
-                                            <!-- meta title -->
-                                            <div class="news-meta">
-                                                <span class="news-author">by <a class="text-white font-weight-bold" href="../category/author.html">Jennifer</a></span>
-                                                <span class="news-date">Oct 22, 2019</span>
-                                            </div>
+                                                <h2 class="h3 post-title text-white my-1"><?php echo $recent_news[$i]['title']; ?></h2>                                   
                                         </div>
                                     </div>
                                 </div>
+                                
                             </div>
+                            <?php } ?>
                             
                             <!--Item slider-->
-                            <div class="carousel-item">
+                             <div class="carousel-item active">
                                 <div class="card border-0 rounded-0 text-light overflow zoom">
                                     <div class="position-relative">
                                         <!--thumbnail img-->
@@ -313,71 +356,19 @@
                                         <div class="position-absolute p-2 p-lg-3 b-0 w-100 bg-shadow">
                                             <!--title-->
                                             <a href="https://bootstrap.news/bootstrap-4-template-news-portal-magazine/">
-                                                <h2 class="h3 post-title text-white my-1">Walmart shares up 10% on online sales lift</h2>
+                                             <h2 class="h3 post-title text-white my-1">Walmart shares up 10% on online sales lift</h2>
                                             </a>
-                                            <!-- meta title -->
-                                            <div class="news-meta">
-                                                <span class="news-author">by <a class="text-white font-weight-bold" href="../category/author.html">Jennifer</a></span>
-                                                <span class="news-date">Oct 22, 2019</span>
-                                            </div>
+                                          
                                         </div>
                                     </div>
                                 </div>
                             </div>
                             
                             <!--Item slider-->
-                            <div class="carousel-item">
-                                <div class="card border-0 rounded-0 text-light overflow zoom">
-                                    <div class="position-relative">
-                                        <!--thumbnail img-->
-                                        <div class="ratio_left-cover-1 image-wrapper">
-                                            <a href="https://bootstrap.news/bootstrap-4-template-news-portal-magazine/">
-                                                <img class="img-fluid w-100"
-                                                     src="https://bootstrap.news/source/img3.jpg"
-                                                     alt="Bootstrap blog template">
-                                            </a>
-                                        </div>
-                                        <div class="position-absolute p-2 p-lg-3 b-0 w-100 bg-shadow">
-                                            <!--title-->
-                                            <a href="https://bootstrap.news/bootstrap-4-template-news-portal-magazine/">
-                                                <h2 class="h3 post-title text-white my-1">Bank chief warns on Brexit staff moves to other company</h2>
-                                            </a>
-                                            <!-- meta title -->
-                                            <div class="news-meta">
-                                                <span class="news-author">by <a class="text-white font-weight-bold" href="../category/author.html">Jennifer</a></span>
-                                                <span class="news-date">Oct 22, 2019</span>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
+                          <!--  -->
                             
                             <!--Item slider-->
-                            <div class="carousel-item">
-                                <div class="card border-0 rounded-0 text-light overflow zoom">
-                                    <div class="position-relative">
-                                        <!--thumbnail img-->
-                                        <div class="ratio_left-cover-1 image-wrapper">
-                                            <a href="https://bootstrap.news/bootstrap-4-template-news-portal-magazine/">
-                                                <img class="img-fluid w-100"
-                                                     src="https://bootstrap.news/source/img4.jpg"
-                                                     alt="Bootstrap portal template">
-                                            </a>
-                                        </div>
-                                        <div class="position-absolute p-2 p-lg-3 b-0 w-100 bg-shadow">
-                                            <!--title-->
-                                            <a href="https://bootstrap.news/bootstrap-4-template-news-portal-magazine/">
-                                                <h2 class="h3 post-title text-white my-1">The world's first floating farm making waves in Rotterdam</h2>
-                                            </a>
-                                            <!-- meta title -->
-                                            <div class="news-meta">
-                                                <span class="news-author">by <a class="text-white font-weight-bold" href="../category/author.html">Jennifer</a></span>
-                                                <span class="news-date">Oct 22, 2019</span>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
+                        
                             <!--end item slider-->
                         </div>
                         <!--end carousel inner-->
@@ -398,102 +389,102 @@
                 <!--Start box news-->
                 <div class="col-12 col-md-6 pt-2 pl-md-1 mb-3 mb-lg-4">
                     <div class="row">
-                        <!--news box-->
+                        <!--news box-->                     
+                         <?php  for($i=0; $i < count($news_category1);++$i){?>
                         <div class="col-6 pb-1 pt-0 pr-1">
                             <div class="card border-0 rounded-0 text-white overflow zoom">
                                 <div class="position-relative">
                                     <!--thumbnail img-->
-                                    <div class="ratio_right-cover-2 image-wrapper">
-                                        <a href="https://bootstrap.news/bootstrap-4-template-news-portal-magazine/">
-                                            <img class="img-fluid"
-                                                 src="https://bootstrap.news/source/img5.jpg"
-                                                 alt="simple blog template bootstrap">
+                                  <div class="ratio_right-cover-2 image-wrapper">
+                                    <a href="<?php echo base_url();?>index.php/web/single/<?php echo $news_category1[$i]['id']; ?>">
+                                  <img class="image-fluid" style="object-fit: cover; height: 270px;"
+                                    src="<?php echo base_url();?>assets/news/images/<?php echo $news_category1[$i]['id']; ?>.jpg" alt="<?php echo $news_category1[$i]['title']; ?>">
                                         </a>
                                     </div>
                                     <div class="position-absolute p-2 p-lg-3 b-0 w-100 bg-shadow">
                                         <!-- category -->
-                                        <a class="p-1 badge badge-primary rounded-0" href="https://bootstrap.news/bootstrap-4-template-news-portal-magazine/">Lifestyle</a>
-
+                                  <a class="p-1 badge badge-primary rounded-0" href="<?php echo base_url();?>index.php/web/category/<?php echo $news_category1[$i]['category_id']; ?>"><?php echo $news_category1[$i]['category']; ?></a>
                                         <!--title-->
-                                        <a href="https://bootstrap.news/bootstrap-4-template-news-portal-magazine/">
-                                            <h2 class="h5 text-white my-1">Should you see the Fantastic Beasts sequel?</h2>
-                                        </a>
+                                  <a href="<?php echo base_url();?>index.php/web/single/<?php echo $news_category1[$i]['id']; ?>">
+                                  <h2 class="h6 text-white my-1"><?php echo $news_category1[$i]['title']; ?></h2>
+                                  </a>
                                     </div>
                                 </div>
                             </div>
                         </div>
+                        <?php } ?>
                         
-                        <!--news box-->
+                       <?php  for($i=0; $i < count($news_category2);++$i){?>
                         <div class="col-6 pb-1 pl-1 pt-0">
                             <div class="card border-0 rounded-0 text-white overflow zoom">
                                 <div class="position-relative">
                                     <!--thumbnail img-->
-                                    <div class="ratio_right-cover-2 image-wrapper">
-                                        <a href="https://bootstrap.news/bootstrap-4-template-news-portal-magazine/">
-                                            <img class="img-fluid"
-                                                 src="https://bootstrap.news/source/img6.jpg"
-                                                 alt="bootstrap templates for blog">
+                                  <div class="ratio_right-cover-2 image-wrapper">
+                                    <a href="<?php echo base_url();?>index.php/web/single/<?php echo $news_category2[$i]['id']; ?>">
+                                  <img class="image-fluid" style="object-fit: cover; height: 270px;"
+                                    src="<?php echo base_url();?>assets/news/images/<?php echo $news_category2[$i]['id']; ?>.jpg" alt="<?php echo $news_category2[$i]['title']; ?>">
                                         </a>
                                     </div>
                                     <div class="position-absolute p-2 p-lg-3 b-0 w-100 bg-shadow">
                                         <!-- category -->
-                                        <a class="p-1 badge badge-primary rounded-0" href="https://bootstrap.news/bootstrap-4-template-news-portal-magazine/">Motocross</a>
+                                  <a class="p-1 badge badge-primary rounded-0" href="<?php echo base_url();?>index.php/web/category/<?php echo $news_category2[$i]['category_id']; ?>"><?php echo $news_category2[$i]['category']; ?></a>
                                         <!--title-->
-                                        <a href="https://bootstrap.news/bootstrap-4-template-news-portal-magazine/">
-                                            <h2 class="h5 text-white my-1">Three myths about Florida elections recount</h2>
-                                        </a>
+                                  <a href="<?php echo base_url();?>index.php/web/single/<?php echo $news_category2[$i]['id']; ?>">
+                                  <h2 class="h6 text-white my-1"><?php echo $news_category2[$i]['title']; ?></h2>
+                                  </a>
                                     </div>
                                 </div>
                             </div>
                         </div>
-                        
-                        <!--news box-->
+                        <?php } ?>
+
+                         <?php  for($i=0; $i < count($news_category3);++$i){?>
                         <div class="col-6 pb-1 pr-1 pt-1">
                             <div class="card border-0 rounded-0 text-white overflow zoom">
                                 <div class="position-relative">
                                     <!--thumbnail img-->
-                                    <div class="ratio_right-cover-2 image-wrapper">
-                                        <a href="https://bootstrap.news/bootstrap-4-template-news-portal-magazine/">
-                                            <img class="img-fluid"
-                                                 src="https://bootstrap.news/source/img7.jpg"
-                                                 alt="bootstrap blog wordpress theme">
+                                  <div class="ratio_right-cover-2 image-wrapper">
+                                    <a href="<?php echo base_url();?>index.php/web/single/<?php echo $news_category3[$i]['id']; ?>">
+                                  <img class="image-fluid" style="object-fit: cover; height: 270px;"
+                                    src="<?php echo base_url();?>assets/news/images/<?php echo $news_category3[$i]['id']; ?>.jpg" alt="<?php echo $news_category3[$i]['title']; ?>">
                                         </a>
                                     </div>
                                     <div class="position-absolute p-2 p-lg-3 b-0 w-100 bg-shadow">
                                         <!-- category -->
-                                        <a class="p-1 badge badge-primary rounded-0" href="https://bootstrap.news/bootstrap-4-template-news-portal-magazine/">Fitness</a>
+                                  <a class="p-1 badge badge-primary rounded-0" href="<?php echo base_url();?>index.php/web/category/<?php echo $news_category3[$i]['category_id']; ?>"><?php echo $news_category3[$i]['category']; ?></a>
                                         <!--title-->
-                                        <a href="https://bootstrap.news/bootstrap-4-template-news-portal-magazine/">
-                                            <h2 class="h5 text-white my-1">Finding Empowerment in Two Wheels and a Helmet</h2>
-                                        </a>
+                                  <a href="<?php echo base_url();?>index.php/web/single/<?php echo $news_category3[$i]['id']; ?>">
+                                  <h2 class="h6 text-white my-1"><?php echo $news_category3[$i]['title']; ?></h2>
+                                  </a>
                                     </div>
                                 </div>
                             </div>
                         </div>
-                        
-                        <!--news box-->
+                        <?php } ?>
+
+                         <?php  for($i=0; $i < count($news_category4);++$i){?>
                         <div class="col-6 pb-1 pl-1 pt-1">
                             <div class="card border-0 rounded-0 text-white overflow zoom">
                                 <div class="position-relative">
                                     <!--thumbnail img-->
-                                    <div class="ratio_right-cover-2 image-wrapper">
-                                        <a href="https://bootstrap.news/bootstrap-4-template-news-portal-magazine/">
-                                            <img class="img-fluid"
-                                                 src="https://bootstrap.news/source/img8.jpg"
-                                                 alt="blog website templates bootstrap">
+                                  <div class="ratio_right-cover-2 image-wrapper">
+                                    <a href="<?php echo base_url();?>index.php/web/single/<?php echo $news_category4[$i]['id']; ?>">
+                                  <img class="image-fluid" style="object-fit: cover; height: 270px;"
+                                    src="<?php echo base_url();?>assets/news/images/<?php echo $news_category4[$i]['id']; ?>.jpg" alt="<?php echo $news_category4[$i]['title']; ?>">
                                         </a>
                                     </div>
                                     <div class="position-absolute p-2 p-lg-3 b-0 w-100 bg-shadow">
                                         <!-- category -->
-                                        <a class="p-1 badge badge-primary rounded-0" href="https://bootstrap.news/bootstrap-4-template-news-portal-magazine/">Adventure</a>
+                                  <a class="p-1 badge badge-primary rounded-0" href="<?php echo base_url();?>index.php/web/category/<?php echo $news_category4[$i]['category_id']; ?>"><?php echo $news_category4[$i]['category']; ?></a>
                                         <!--title-->
-                                        <a href="https://bootstrap.news/bootstrap-4-template-news-portal-magazine/">
-                                            <h2 class="h5 text-white my-1">Ditch receipts and four other tips to be a shopper</h2>
-                                        </a>
+                                  <a href="<?php echo base_url();?>index.php/web/single/<?php echo $news_category4[$i]['id']; ?>">
+                                  <h2 class="h6 text-white my-1"><?php echo $news_category4[$i]['title']; ?></h2>
+                                  </a>
                                     </div>
                                 </div>
                             </div>
                         </div>
+                        <?php } ?>
                         <!--end news box-->
                     </div>
                 </div>
@@ -512,26 +503,26 @@
         <div class="col-lg-8 col-md-12">
             <!--- Featured Tab startet -->
           <div class="featured-tab color-blue">
-            <h3 class="block-title"><span>Technology</span></h3>
+            <h3 class="block-title"><span>Suggest News</span></h3>
             <ul class="nav nav-tabs">
                 <li class="nav-item">
                   <a class="nav-link animated fadeIn active" href="#tab_a" data-toggle="tab">
                     <span class="tab-head">
-                    <span class="tab-text-title">Gadgets</span>         
+                    <span class="tab-text-title">World</span>         
                   </span>
                   </a>
                 </li>
                 <li class="nav-item">
                   <a class="nav-link animated fadeIn" href="#tab_b" data-toggle="tab">
                     <span class="tab-head">
-                    <span class="tab-text-title">Games</span>         
+                    <span class="tab-text-title">Politics</span>         
                   </span>
                   </a>
               </li>
               <li class="nav-item">
                   <a class="nav-link animated fadeIn" href="#tab_c" data-toggle="tab">
                     <span class="tab-head">
-                    <span class="tab-text-title">Robotics</span>          
+                    <span class="tab-text-title">Sports</span>          
                   </span>
                   </a>
               </li>
@@ -540,105 +531,49 @@
             <div class="tab-content">
                 <div class="tab-pane active animated fadeInRight" id="tab_a">
                   <div class="row">
-                    <div class="col-lg-6 col-md-6">
+                    <div class="col-lg-6 col-md-6" style="height: 7em;">
+                       <?php  for($i=0; $i < count($suggest_world_news);++$i) { ?>
                       <div class="post-block-style clearfix">
                       <div class="post-thumb">
-                        <a href="#">
-                          <img class="img-fluid" src="<?php echo base_url();?>assets/images/news/tech/gadget1.jpg" alt="" />
+                        <a href="<?php echo base_url();?>index.php/web/single/<?php echo $suggest_world_news[$i]['id']; ?>">
+                          <img class="img-fluid" src="<?php echo base_url();?>assets/news/images/<?php echo $suggest_world_news[$i]['id']; ?>.jpg" alt="" />
                         </a>
                       </div>
-                      <a class="post-cat" href="#">Gadgets</a>
+                      <a class="post-cat" href="<?php echo base_url();?>index.php/web/category/<?php echo $suggest_world_news[$i]['category_id']; ?>"><?php echo $suggest_world_news[$i]['category']; ?></a>
                       <div class="post-content">
                         <h2 class="post-title">
-                          <a href="#">The best MacBook Pro alternatives in 2017 for Apple users</a>
-                        </h2>
-                        <div class="post-meta">
-                          <span class="post-author"><a href="#">John Doe</a></span>
-                          <span class="post-date">Feb 24, 2017</span>
-                        </div>
-                        <p>Lumbersexual meh sustainable Thundercats meditation kogi. Tilde Pitchfork vegan, gentrify minim elit semiotics non messenger bag Austin which roasted ...</p>
-                      </div><!-- Post content end -->
-                    </div><!-- Post Block style end -->
-                    </div><!-- Col end -->
+                          <a href="<?php echo base_url();?>index.php/web/single/<?php echo $suggest_world_news[$i]['id']; ?>"><?php echo $suggest_world_news[$i]['title']; ?></a>
+                        </h2>                        
+                        <p><?php echo $suggest_world_news[$i]['content']; ?></p>
+                      </div>
+                    </div>
+                 <?php } ?>
+                    </div>
 
                     <div class="col-lg-6 col-md-6">
                       <div class="list-post-block">
                       <ul class="list-post">
+                          <?php  for($i=0; $i < count($suggest_world_news_small);++$i) { ?>
                         <li class="clearfix">
                           <div class="post-block-style post-float clearfix">
                             <div class="post-thumb">
                               <a href="#">
-                                <img class="img-fluid" src="<?php echo base_url();?>assets/images/news/tech/gadget2.jpg" alt="" />
+                                <img class="img-fluid" src="<?php echo base_url();?>assets/news/images/<?php echo $suggest_world_news_small[$i]['id']; ?>.jpg" alt="" />
                               </a>
                             </div><!-- Post thumb end -->
 
                             <div class="post-content">
                               <h2 class="post-title title-small">
-                                <a href="#">Samsung Gear S3 review: A whimper, when smartwatches need a bang</a>
+                                <a href="#"><?php echo $suggest_world_news_small[$i]['title']; ?></a>
                               </h2>
                               <div class="post-meta">
                                 <span class="post-date">Feb 13, 2017</span>
                               </div>
-                            </div><!-- Post content end -->
+                            </div>
+
                           </div><!-- Post block style end -->
                         </li><!-- Li 1 end -->
-
-                        <li class="clearfix">
-                          <div class="post-block-style post-float clearfix">
-                            <div class="post-thumb">
-                              <a href="#">
-                                <img class="img-fluid" src="<?php echo base_url();?>assets/images/news/tech/gadget3.jpg" alt="" />
-                              </a>
-                            </div><!-- Post thumb end -->
-
-                            <div class="post-content">
-                              <h2 class="post-title title-small">
-                                <a href="#">Panasonic's new Sumix CH7 an ultra portable filmmaker's dream</a>
-                              </h2>
-                              <div class="post-meta">
-                                <span class="post-date">Jan 11, 2017</span>
-                              </div>
-                            </div><!-- Post content end -->
-                          </div><!-- Post block style end -->
-                        </li><!-- Li 2 end -->
-
-                        <li class="clearfix">
-                          <div class="post-block-style post-float clearfix">
-                            <div class="post-thumb">
-                              <a href="#">
-                                <img class="img-fluid" src="<?php echo base_url();?>assets/images/news/tech/gadget4.jpg" alt="" />
-                              </a>
-                            </div><!-- Post thumb end -->
-
-                            <div class="post-content">
-                              <h2 class="post-title title-small">
-                                <a href="#">Soaring through Southern Patagonia with the Premium Byrd drone</a>
-                              </h2>
-                              <div class="post-meta">
-                                <span class="post-date">Feb 19, 2017</span>
-                              </div>
-                            </div><!-- Post content end -->
-                          </div><!-- Post block style end -->
-                        </li><!-- Li 3 end -->
-
-                        <li class="clearfix">
-                          <div class="post-block-style post-float clearfix">
-                            <div class="post-thumb">
-                              <a href="#">
-                                <img class="img-fluid" src="<?php echo base_url();?>assets/images/news/tech/gadget5.jpg" alt="" />
-                              </a>
-                            </div><!-- Post thumb end -->
-
-                            <div class="post-content">
-                              <h2 class="post-title title-small">
-                                <a href="#">Google Assistant starts calling out to all recent Android phones</a>
-                              </h2>
-                              <div class="post-meta">
-                                <span class="post-date">Feb 27, 2017</span>
-                              </div>
-                            </div><!-- Post content end -->
-                          </div><!-- Post block style end -->
-                        </li><!-- Li 4 end -->
+                        <?php } ?>
                       </ul><!-- List post end -->
                     </div><!-- List post block end -->
                     </div><!-- List post Col end -->
@@ -647,26 +582,24 @@
 
                   <div class="tab-pane animated fadeInRight" id="tab_b">
                     <div class="row">
-                    <div class="col-lg-6 col-md-6">
+                     <div class="col-lg-6 col-md-6" style="height: 7em;">
+                       <?php  for($i=0; $i < count($suggest_politics_news);++$i) { ?>
                       <div class="post-block-style clearfix">
                       <div class="post-thumb">
-                        <a href="#">
-                          <img class="img-fluid" src="<?php echo base_url();?>assets/images/news/tech/game1.jpg" alt="" />
+                        <a href="<?php echo base_url();?>index.php/web/single/<?php echo $suggest_politics_news[$i]['id']; ?>">
+                          <img class="img-fluid" src="<?php echo base_url();?>assets/news/images/<?php echo $suggest_politics_news[$i]['id']; ?>.jpg" alt="" />
                         </a>
                       </div>
-                      <a class="post-cat" href="#">Games</a>
+                      <a class="post-cat" href="<?php echo base_url();?>index.php/web/category/<?php echo $suggest_politics_news[$i]['category_id']; ?>"><?php echo $suggest_politics_news[$i]['category']; ?></a>
                       <div class="post-content">
                         <h2 class="post-title">
-                          <a href="#">Historical heroes and robot dinosaurs: New games on our... </a>
-                        </h2>
-                        <div class="post-meta">
-                          <span class="post-author"><a href="#">John Doe</a></span>
-                          <span class="post-date">Feb 24, 2017</span>
-                        </div>
-                        <p>Lumbersexual meh sustainable Thundercats meditation kogi. Tilde Pitchfork vegan, gentrify minim elit semiotics non messenger bag Austin which roasted ...</p>
-                      </div><!-- Post content end -->
-                    </div><!-- Post Block style end -->
-                    </div><!-- Col end -->
+                          <a href="<?php echo base_url();?>index.php/web/single/<?php echo $suggest_politics_news[$i]['id']; ?>"><?php echo $suggest_politics_news[$i]['title']; ?></a>
+                        </h2>                        
+                        <p><?php echo $suggest_politics_news[$i]['content']; ?></p>
+                      </div>
+                    </div>
+                 <?php } ?>
+                    </div>
 
                     <div class="col-lg-6 col-md-6">
                       <div class="list-post-block">
@@ -755,26 +688,24 @@
                   <div class="tab-pane animated fadeInLeft" id="tab_c">
 
                 <div class="row">
-                    <div class="col-lg-6 col-md-6">
+                     <div class="col-lg-6 col-md-6" style="height: 7em;">
+                       <?php  for($i=0; $i < count($suggest_sport_news);++$i) { ?>
                       <div class="post-block-style clearfix">
                       <div class="post-thumb">
-                        <a href="#">
-                          <img class="img-fluid" src="<?php echo base_url();?>assets/images/news/tech/robot1.jpg" alt="" />
+                        <a href="<?php echo base_url();?>index.php/web/single/<?php echo $suggest_sport_news[$i]['id']; ?>">
+                          <img class="img-fluid" src="<?php echo base_url();?>assets/news/images/<?php echo $suggest_sport_news[$i]['id']; ?>.jpg" alt="" />
                         </a>
                       </div>
-                      <a class="post-cat" href="#">Robotics</a>
+                      <a class="post-cat" href="<?php echo base_url();?>index.php/web/category/<?php echo $suggest_sport_news[$i]['category_id']; ?>"><?php echo $suggest_sport_news[$i]['category']; ?></a>
                       <div class="post-content">
                         <h2 class="post-title">
-                          <a href="#">There's no escaping Watsone Dynamics' wheeled jumping robot</a>
-                        </h2>
-                        <div class="post-meta">
-                          <span class="post-author"><a href="#">John Doe</a></span>
-                          <span class="post-date">Feb 24, 2017</span>
-                        </div>
-                        <p>Lumbersexual meh sustainable Thundercats meditation kogi. Tilde Pitchfork vegan, gentrify minim elit semiotics non messenger bag Austin which roasted ...</p>
-                      </div><!-- Post content end -->
-                    </div><!-- Post Block style end -->
-                    </div><!-- Col end -->
+                          <a href="<?php echo base_url();?>index.php/web/single/<?php echo $suggest_sport_news[$i]['id']; ?>"><?php echo $suggest_sport_news[$i]['title']; ?></a>
+                        </h2>                        
+                        <p><?php echo $suggest_sport_news[$i]['content']; ?></p>
+                      </div>
+                    </div>
+                 <?php } ?>
+                    </div>
 
                     <div class="col-lg-6 col-md-6">
                       <div class="list-post-block">
@@ -868,185 +799,105 @@
             <div id="latest-news-slide" class="owl-carousel owl-theme latest-news-slide">
               <div class="item">
                 <ul class="list-post">
-                  <li class="clearfix">
+                   <?php  for($i=0; $i < 2;++$i) { ?>
+                  <li class="clearfix">                   
                     <div class="post-block-style clearfix">
                       <div class="post-thumb">
-                        <a href="#"><img class="img-fluid" src="<?php echo base_url();?>assets/images/news/lifestyle/health5.jpg" alt="" /></a>
+                        <a href="#"><img class="img-fluid" src="<?php echo base_url();?>assets/news/images/<?php echo $recent_news[$i]['id']; ?>.jpg" alt="<?php echo $recent_news[$i]['title']; ?>" /></a>
                       </div>
-                      <a class="post-cat" href="#">Health</a>
+                      <a class="post-cat" href="#"><?php echo $recent_news[$i]['category']; ?></a>
                       <div class="post-content">
-                        <h2 class="post-title title-medium">
-                          <a href="#">Netcix cuts out the chill with an integrated...</a>
-                        </h2>
+                        <h4 class="post-title title-medium">
+                          <a href="#"><?php echo $recent_news[$i]['title']; ?></a>
+                        </h4>
                         <div class="post-meta">
                           <span class="post-author"><a href="#">John Doe</a></span>
                           <span class="post-date">Feb 19, 2017</span>
                         </div>
                       </div><!-- Post content end -->
-                    </div><!-- Post Block style end -->
+                    </div><!-- Post Block style end -->                   
                   </li><!-- Li end -->
-
-                  <div class="gap-30"></div>
-
-                  <li class="clearfix">
+                   <?php } ?>
+                  <div class="gap-30"></div>                
+                </ul><!-- List post 1 end -->
+              </div><!-- Item 1 end -->
+               <div class="item">
+                <ul class="list-post">
+                   <?php  for($i=0; $i < 2;++$i) { ?>
+                  <li class="clearfix">                   
                     <div class="post-block-style clearfix">
                       <div class="post-thumb">
-                        <a href="#"><img class="img-fluid" src="<?php echo base_url();?>assets/images/news/lifestyle/travel4.jpg" alt="" /></a>
+                        <a href="#"><img class="img-fluid" src="<?php echo base_url();?>assets/news/images/<?php echo $recent_news[$i]['id']; ?>.jpg" alt="<?php echo $recent_news[$i]['title']; ?>" /></a>
                       </div>
-                      <a class="post-cat" href="#">Travel</a>
+                      <a class="post-cat" href="#"><?php echo $recent_news[$i]['category']; ?></a>
                       <div class="post-content">
-                        <h2 class="post-title title-medium">
-                          <a href="#">19 incredible photos from Disney's 'Star Wars…</a>
-                        </h2>
+                        <h4 class="post-title title-medium">
+                          <a href="#"><?php echo $recent_news[$i]['title']; ?></a>
+                        </h4>
                         <div class="post-meta">
                           <span class="post-author"><a href="#">John Doe</a></span>
-                          <span class="post-date">Mar 09, 2017</span>
+                          <span class="post-date">Feb 19, 2017</span>
                         </div>
                       </div><!-- Post content end -->
-                    </div><!-- Post Block style end -->
+                    </div><!-- Post Block style end -->                   
                   </li><!-- Li end -->
+                   <?php } ?>
+                  <div class="gap-30"></div>                
                 </ul><!-- List post 1 end -->
-
+              </div><!-- Item 1 end -->
+               <div class="item">
+                <ul class="list-post">
+                   <?php  for($i=0; $i < 2;++$i) { ?>
+                  <li class="clearfix">                   
+                    <div class="post-block-style clearfix">
+                      <div class="post-thumb">
+                        <a href="#"><img class="img-fluid" src="<?php echo base_url();?>assets/news/images/<?php echo $recent_news[$i]['id']; ?>.jpg" alt="<?php echo $recent_news[$i]['title']; ?>" /></a>
+                      </div>
+                      <a class="post-cat" href="#"><?php echo $recent_news[$i]['category']; ?></a>
+                      <div class="post-content">
+                        <h4 class="post-title title-medium">
+                          <a href="#"><?php echo $recent_news[$i]['title']; ?></a>
+                        </h4>
+                        <div class="post-meta">
+                          <span class="post-author"><a href="#">John Doe</a></span>
+                          <span class="post-date">Feb 19, 2017</span>
+                        </div>
+                      </div><!-- Post content end -->
+                    </div><!-- Post Block style end -->                   
+                  </li><!-- Li end -->
+                   <?php } ?>
+                  <div class="gap-30"></div>                
+                </ul><!-- List post 1 end -->
+              </div><!-- Item 1 end -->
+               <div class="item">
+                <ul class="list-post">
+                   <?php  for($i=0; $i < 2;++$i) { ?>
+                  <li class="clearfix">                   
+                    <div class="post-block-style clearfix">
+                      <div class="post-thumb">
+                        <a href="#"><img class="img-fluid" src="<?php echo base_url();?>assets/news/images/<?php echo $recent_news[$i]['id']; ?>.jpg" alt="<?php echo $recent_news[$i]['title']; ?>" /></a>
+                      </div>
+                      <a class="post-cat" href="#"><?php echo $recent_news[$i]['category']; ?></a>
+                      <div class="post-content">
+                        <h4 class="post-title title-medium">
+                          <a href="#"><?php echo $recent_news[$i]['title']; ?></a>
+                        </h4>
+                        <div class="post-meta">
+                          <span class="post-author"><a href="#">John Doe</a></span>
+                          <span class="post-date">Feb 19, 2017</span>
+                        </div>
+                      </div><!-- Post content end -->
+                    </div><!-- Post Block style end -->                   
+                  </li><!-- Li end -->
+                   <?php } ?>
+                  <div class="gap-30"></div>                
+                </ul><!-- List post 1 end -->
               </div><!-- Item 1 end -->
 
-              <div class="item">
-
-                <ul class="list-post">
-                  <li class="clearfix">
-                    <div class="post-block-style clearfix">
-                      <div class="post-thumb">
-                        <a href="#"><img class="img-fluid" src="<?php echo base_url();?>assets/images/news/lifestyle/travel5.jpg" alt="" /></a>
-                      </div>
-                      <a class="post-cat" href="#">Travel</a>
-                      <div class="post-content">
-                        <h2 class="post-title title-medium">
-                          <a href="#">Hynopedia helps female travelers find health …</a>
-                        </h2>
-                        <div class="post-meta">
-                          <span class="post-author"><a href="#">John Doe</a></span>
-                          <span class="post-date">Mar 12, 2017</span>
-                        </div>
-                      </div><!-- Post content end -->
-                    </div><!-- Post Block style end -->
-                  </li><!-- Li end -->
-
-                  <div class="gap-30"></div>
-
-                  <li class="clearfix">
-                    <div class="post-block-style clearfix">
-                      <div class="post-thumb">
-                        <a href="#"><img class="img-fluid" src="<?php echo base_url();?>assets/images/news/lifestyle/health4.jpg" alt="" /></a>
-                      </div>
-                      <a class="post-cat" href="#">Health</a>
-                      <div class="post-content">
-                        <h2 class="post-title title-medium">
-                          <a href="#">Samsung Gear S3 review: A whimper, when...</a>
-                        </h2>
-                        <div class="post-meta">
-                          <span class="post-author"><a href="#">John Doe</a></span>
-                          <span class="post-date">Feb 17, 2017</span>
-                        </div>
-                      </div><!-- Post content end -->
-                    </div><!-- Post Block style end -->
-                  </li><!-- Li end -->
-                </ul><!-- List post 2 end -->
-                
-              </div><!-- Item 2 end -->
-
-              <div class="item">
-
-                <ul class="list-post">
-                  <li class="clearfix">
-                    <div class="post-block-style clearfix">
-                      <div class="post-thumb">
-                        <a href="#"><img class="img-fluid" src="<?php echo base_url();?>assets/images/news/tech/gadget2.jpg" alt="" /></a>
-                      </div>
-                      <a class="post-cat" href="#">Gadget</a>
-                      <div class="post-content">
-                        <h2 class="post-title title-medium">
-                          <a href="#">Samsung Gear S3 review: A whimper, when...</a>
-                        </h2>
-                        <div class="post-meta">
-                          <span class="post-author"><a href="#">John Doe</a></span>
-                          <span class="post-date">Jan 18, 2017</span>
-                        </div>
-                      </div><!-- Post content end -->
-                    </div><!-- Post Block style end -->
-                  </li><!-- Li end -->
-
-                  <div class="gap-30"></div>
-
-                  <li class="clearfix">
-                    <div class="post-block-style clearfix">
-                      <div class="post-thumb">
-                        <a href="#"><img class="img-fluid" src="<?php echo base_url();?>assets/images/news/lifestyle/architecture3.jpg" alt="" /></a>
-                      </div>
-                      <a class="post-cat" href="#">Architecture</a>
-                      <div class="post-content">
-                        <h2 class="post-title title-medium">
-                          <a href="#">The bedroom keys to Bond villain chic: The be…</a>
-                        </h2>
-                        <div class="post-meta">
-                          <span class="post-author"><a href="#">John Doe</a></span>
-                          <span class="post-date">Jan 12, 2017</span>
-                        </div>
-                      </div><!-- Post content end -->
-                    </div><!-- Post Block style end -->
-                  </li><!-- Li end -->
-                </ul><!-- List post 3 end -->
-                
-              </div><!-- Item 3 end -->
-
-              <div class="item">
-                <ul class="list-post">
-                  <li class="clearfix">
-                    <div class="post-block-style clearfix">
-                      <div class="post-thumb">
-                        <a href="#">
-                          <img class="img-fluid" src="<?php echo base_url();?>assets/images/news/lifestyle/food3.jpg" alt="" />
-                        </a>
-                      </div>
-                      <a class="post-cat" href="#">Food</a>
-                      <div class="post-content">
-                        <h2 class="post-title title-medium">
-                          <a href="#">You can now get paid to shove chocolate coffe…</a>
-                        </h2>
-                        <div class="post-meta">
-                          <span class="post-author"><a href="#">John Doe</a></span>
-                          <span class="post-date">Jan 16, 2017</span>
-                        </div>
-                      </div><!-- Post content end -->
-                    </div><!-- Post Block style end -->
-                  </li><!-- Li end -->
-
-                  <div class="gap-30"></div>
-
-                  <li class="clearfix">
-                    <div class="post-block-style clearfix">
-                      <div class="post-thumb">
-                        <a href="#">
-                          <img class="img-fluid" src="<?php echo base_url();?>assets/images/news/tech/game1.jpg" alt="" />
-                        </a>
-                      </div>
-                      <a class="post-cat" href="#">Games</a>
-                      <div class="post-content">
-                        <h2 class="post-title title-medium">
-                          <a href="#">Historical heroes and robot dinosaurs: New...</a>
-                        </h2>
-                        <div class="post-meta">
-                          <span class="post-author"><a href="#">John Doe</a></span>
-                          <span class="post-date">Jan 06, 2017</span>
-                        </div>
-                      </div><!-- Post content end -->
-                    </div><!-- Post Block style end -->
-                  </li><!-- Li end -->
-                </ul><!-- List post 4 end -->
-                
-              </div><!-- Item 4 end -->
+          
             </div><!-- Latest News owl carousel end-->
           </div><!--- Latest news end -->
-
-          <div class="gap-50"></div>    
+    <div class="gap-50"></div>    
           <div class="gap-40"></div>   
         </div><!-- Content Col end -->
 
@@ -1123,8 +974,7 @@
                         <a href="#">
                            <img class="img-fluid" src="images/news/video/video1.jpg" alt="" />
                         </a>
-                     </div><!-- Post thumb end -->
-
+                     </div>
                      <div class="post-content">
                         <a class="post-cat" href="#">Video</a>
                         <h2 class="post-title">
@@ -1133,8 +983,8 @@
                         <div class="post-meta">
                            <span class="post-date">Jan 09, 2017</span>
                         </div>
-                     </div><!-- Post content end -->
-                  </div><!-- Post Overaly Article 2 end -->
+                     </div>
+                  </div>
 
                 </div><!-- Item 1 end -->
 
@@ -1199,8 +1049,7 @@
         </div>
       </div>
     </div>
-  </section>
-                    
+  </section>                  
                     
               
                     

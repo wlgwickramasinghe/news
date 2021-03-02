@@ -98,13 +98,14 @@
                                              </header>
                                           </div>
                                        </div>
-                                       <div class="btSingleLatestPost col-md-12 col-ms-12  inherit">
+
+                                                         <div class="btSingleLatestPost col-md-12 col-ms-12  inherit">
                                           <div class="btSingleLatestPostImage btTextCenter">
                                              <div class="bpgPhoto btFooterLatestPosts btZoomInHoverType" >
-                                                <a href="http://bold-news.bold-themes.com/main-demo/2017/03/07/the-soundtrack-to-a-gaming-revolution/" target="_self" title=""></a>
+                                                <a href="http://bold-news.bold-themes.com/main-demo/2017/03/09/healthy-quick-easy-dessert-recipes/" target="_self" title=""></a>
                                                 <div class="boldPhotoBox">
                                                    <div class="bpbItem">
-                                                      <div class="btImage"><img src="<?php echo base_url();?>assets/web/uploads/sites/2/2017/03/tech06-320x320.jpg" alt="" title=""></div>
+                                                      <div class="btImage"><img src="<?php echo base_url();?>assets/web/uploads/sites/2/2017/03/FOOD-dederts4-320x320.jpg" alt="" title=""></div>
                                                    </div>
                                                 </div>
                                                 <div class="captionPane btDarkSkin btTextCenter">
@@ -118,24 +119,19 @@
                                           </div>
                                           <div class = "btSingleLatestPostContent">
                                              <header class="header btClear small" >
-                                                <div class="btSuperTitle"><span><span class="btArticleDate">March 7, 2017</span></span></div>
+                                                <div class="btSuperTitle"><span><span class="btArticleDate">March 9, 2017</span></span></div>
                                                 <div class="dash">
-                                                   <h4><span class="headline"><a href="http://bold-news.bold-themes.com/main-demo/2017/03/07/the-soundtrack-to-a-gaming-revolution/" target="_self">The soundtrack to a gaming revolution</a></span></h4>
+                                                   <h4><span class="headline"><a href="http://bold-news.bold-themes.com/main-demo/2017/03/09/healthy-quick-easy-dessert-recipes/" target="_self">Healthy quick &#038; easy dessert recipes</a></span></h4>
                                                 </div>
                                              </header>
                                           </div>
                                        </div>
-                                       <div class="btLatestPostsNav">
-                                          <ul>
-                                             <li class="btBtn btnOutlineStyle btnAccentColor btnSmall btnNormalWidth btnRightPosition btnNoIcon active"><a href="index2679.html?page=1">1</a></li>
-                                             <li class="btBtn btnOutlineStyle btnAccentColor btnSmall btnNormalWidth btnRightPosition btnNoIcon"><a href="index4658.html?page=2">2</a></li>
-                                             <li class="btBtn btnOutlineStyle btnAccentColor btnSmall btnNormalWidth btnRightPosition btnNoIcon"><a href="index9ba9.html?page=3">3</a></li>
-                                          </ul>
-                                       </div>
+                                       
+                                    
                                     </div>
-                                    <div class="btClear btSeparator topMediumSpaced noBorder" >
+                                  <!--   <div class="btClear btSeparator topMediumSpaced noBorder" >
                                        <hr>
-                                    </div>
+                                    </div> -->
                                  </div>
                               </div>
                               <div class="rowItem col-md-4 col-ms-12 btTextLeft inherit"  data-width="4">
@@ -180,15 +176,9 @@
                                  <div class="btCustomMenu btFooterCustomMenu" >
                                     <div class="menu-categories-menu-container">
                                        <ul id="menu-categories-menu" class="menu">
-                                          <li id="menu-item-3922" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-3922"><a href="http://bold-news.bold-themes.com/main-demo/sub-sections/sub-section-layout-1/">BUSINESS</a></li>
-                                          <li id="menu-item-3930" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-3930"><a href="http://bold-news.bold-themes.com/main-demo/sub-sections/sub-section-layout-2/">ENTERTAINMENT</a></li>
-                                          <li id="menu-item-3929" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-3929"><a href="http://bold-news.bold-themes.com/main-demo/sub-sections/sub-section-layout-3/">FOOD &#038; CUISINE</a></li>
-                                          <li id="menu-item-3928" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-3928"><a href="http://bold-news.bold-themes.com/main-demo/sub-sections/sub-section-layout-4/">LIFESTYLE</a></li>
-                                          <li id="menu-item-3927" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-3927"><a href="http://bold-news.bold-themes.com/main-demo/sub-sections/sub-section-layout-5/">PETS</a></li>
-                                          <li id="menu-item-3924" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-3924"><a href="http://bold-news.bold-themes.com/main-demo/sub-sections/sub-section-layout-6/">SPORT</a></li>
-                                          <li id="menu-item-3925" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-3925"><a href="http://bold-news.bold-themes.com/main-demo/sub-sections/sub-section-layout-7/">TECH</a></li>
-                                          <li id="menu-item-3926" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-3926"><a href="http://bold-news.bold-themes.com/main-demo/sub-sections/sub-section-layout-8/">TRAVEL</a></li>
-                                          <li id="menu-item-3923" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-3923"><a href="http://bold-news.bold-themes.com/main-demo/sub-sections/sub-section-layout-9/">URBAN</a></li>
+                                              <?php  for($i=0; $i < count($category_list);++$i){?>
+                                          <li id="menu-item-3922" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-3922"><a href="<?php echo base_url();?>index.php/web/category/<?php echo $category_list[$i]['id']; ?>"><?php echo $category_list[$i]['category']; ?></a></li>   
+                                          <?php } ?>                              
                                        </ul>
                                     </div>
                                  </div>
@@ -297,27 +287,9 @@
          var wpcf7 = {"apiSettings":{"root":"http:\/\/bold-news.bold-themes.com\/main-demo\/wp-json\/contact-form-7\/v1","namespace":"contact-form-7\/v1"}};
          /* ]]> */
       </script>
-      <script type='text/javascript' src='<?php echo base_url();?>assets/web/plugins/contact-form-7/includes/js/scripts9dff.js?ver=5.3.2' id='contact-form-7-js'></script>
-      <script type='text/javascript' src='<?php echo base_url();?>assets/web/plugins/woocommerce/assets/js/jquery-blockui/jquery.blockUI.min44fd.js?ver=2.70' id='jquery-blockui-js'></script>
-      <script type='text/javascript' id='wc-add-to-cart-js-extra'>
-         /* <![CDATA[ */
-         var wc_add_to_cart_params = {"ajax_url":"\/main-demo\/wp-admin\/admin-ajax.php","wc_ajax_url":"\/main-demo\/?wc-ajax=%%endpoint%%","i18n_view_cart":"View cart","cart_url":"http:\/\/bold-news.bold-themes.com\/main-demo\/shop\/cart\/","is_cart":"","cart_redirect_after_add":"no"};
-         /* ]]> */
-      </script>
-      <script type='text/javascript' src='<?php echo base_url();?>assets/web/plugins/woocommerce/assets/js/frontend/add-to-cart.min20fd.js?ver=4.9.2' id='wc-add-to-cart-js'></script>
-      <script type='text/javascript' src='<?php echo base_url();?>assets/web/plugins/woocommerce/assets/js/js-cookie/js.cookie.min6b25.js?ver=2.1.4' id='js-cookie-js'></script>
-      <script type='text/javascript' id='woocommerce-js-extra'>
-         /* <![CDATA[ */
-         var woocommerce_params = {"ajax_url":"\/main-demo\/wp-admin\/admin-ajax.php","wc_ajax_url":"\/main-demo\/?wc-ajax=%%endpoint%%"};
-         /* ]]> */
-      </script>
-      <script type='text/javascript' src='<?php echo base_url();?>assets/web/plugins/woocommerce/assets/js/frontend/woocommerce.min20fd.js?ver=4.9.2' id='woocommerce-js'></script>
-      <script type='text/javascript' id='wc-cart-fragments-js-extra'>
-         /* <![CDATA[ */
-         var wc_cart_fragments_params = {"ajax_url":"\/main-demo\/wp-admin\/admin-ajax.php","wc_ajax_url":"\/main-demo\/?wc-ajax=%%endpoint%%","cart_hash_key":"wc_cart_hash_becbc01faf422f151a31af595ed2b1aa","fragment_name":"wc_fragments_becbc01faf422f151a31af595ed2b1aa","request_timeout":"5000"};
-         /* ]]> */
-      </script>
-      <script type='text/javascript' src='<?php echo base_url();?>assets/web/plugins/woocommerce/assets/js/frontend/cart-fragments.min20fd.js?ver=4.9.2' id='wc-cart-fragments-js'></script>
+      <script type='text/javascript' src='<?php echo base_url();?>assets/web/plugins/contact-form-7/includes/js/scripts9dff.js?ver=5.3.2' id='contact-form-7-js'></script>     
+      
+      
       <script type='text/javascript' src='<?php echo base_url();?>assets/web/framework/js/slick.mind96d.js' id='slick-js'></script>
       <script type='text/javascript' src='<?php echo base_url();?>assets/web/framework/js/jquery.magnific-popup.mind96d.js' id='jquery-magnific-popup-js'></script>
       <script type='text/javascript' src='<?php echo base_url();?>assets/web/framework/js/iscrolld96d.js' id='iscroll-js'></script>

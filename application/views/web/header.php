@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en-US" data-bt-theme="Bold News 1.4.0">
 <meta http-equiv="content-type" content="text/html;charset=UTF-8" />
+
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
@@ -9,12 +10,10 @@
 <title>News Web</title>
 <link rel='dns-prefetch' href='http://fonts.googleapis.com/' />
 <link rel='dns-prefetch' href='http://s.w.org/' />
-<link rel="alternate" type="application/rss+xml" title="Bold News &raquo; Feed" href="http://bold-news.bold-themes.com/main-demo/feed/" />
-<link rel="alternate" type="application/rss+xml" title="Bold News &raquo; Comments Feed" href="http://bold-news.bold-themes.com/main-demo/comments/feed/" />
-<link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<!-- <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css"> -->
 <script type="text/javascript" src="<?php echo base_url();?>assets/css/js/jquery.js"></script>
   <!-- Popper Jquery -->
-<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+<!-- <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script> -->
 <!-- Owl Carousel -->
   <script type="text/javascript" src="<?php echo base_url();?>assets/css/js/owl.carousel.min.js"></script>
   <!-- Color box -->
@@ -26,8 +25,6 @@
 
   <!-- Template custom -->
   <script type="text/javascript" src="<?php echo base_url();?>assets/css/js/custom.js"></script>
-
-
   <link rel="stylesheet" href="<?php echo base_url();?>assets/css/font-awesome.min.css">
   <!-- Owl Carousel -->
   <link rel="stylesheet" href="<?php echo base_url();?>assets/css/web/css/owl.carousel.min.css">
@@ -73,13 +70,14 @@ padding-bottom: 8px;
 font-weight: 900;
 }
 .news {
-    width: 160px;
-    background-color: red;
+    /*width: 160px;*/
+    background-color: black;
     width: fit-content;
-    padding: 5px;
+   vertical-align: middle;
     height: auto;
     text-align: center;
     color: white;
+
 }
 
 .news-scroll a {
@@ -127,11 +125,78 @@ font-weight: 900;
     -webkit-transform: scale(1.1);
     transform: scale(1.1);
 }
+
+.carousel-cell1 {
+    width: 200px;
+    /* height:40%; */
+    
+    }
+
+    /* cell number */
+    .carousel-cell1:before {
+      display: block;
+    }
+
+
+   #map {
+      /* height: 400px; */
+      /* The height is 400 pixels */
+      width: 100%;
+      /* The width is the width of the web page */
+   }
+
+
+   #cf {
+  position:relative;
+  height:25px;
+  width:25px;
+  margin:0 auto;
+}
+
+#cf img {
+  position:absolute;
+  left:0;
+  -webkit-transition: opacity 400ms ease-in-out;
+  -moz-transition: opacity 400ms ease-in-out;
+  -o-transition: opacity 400ms ease-in-out;
+  transition: opacity 400ms ease-in-out;
+}
+
+#cf img.top:hover {
+  opacity:0;
+}
+   
+
+.modal-dialog {
+      max-width: 800px;
+      margin: 30px auto;
+  }
+
+
+
+.modal-body {
+  position:relative;
+  padding:0px;
+}
+.close {
+  position:absolute;
+  right:-30px;
+  top:0;
+  z-index:999;
+  font-size:2rem;
+  font-weight: normal;
+  color:#fff;
+  opacity:1;
+}
+.btn {
+}
 /*news slider styles end here*/
+
 </style>
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://unpkg.com/flickity@2/dist/flickity.min.css">
       <link rel='stylesheet' id='wp-block-library-css'  href='<?php echo base_url();?>assets/web/css/dist/block-library/style.mind96d.css' type='text/css' media='all' />
       <link rel='stylesheet' id='wc-block-vendors-style-css'  href='<?php echo base_url();?>assets/web/css/vendors-stylecce7.css' type='text/css' media='all' />
-      <link rel='stylesheet' id='wc-block-style-css'  href='<?php echo base_url();?>assets/web/plugins/woocommerce/packages/woocommerce-blocks/build/stylecce7.css?ver=' type='text/css' media='all' />
       <!-- <link rel='stylesheet' id='bt_dev_style-css'  href='<?php echo base_url();?>assets/web/framework/css/styled96d.css' type='text/css' media='all' /> -->
       <link rel='stylesheet' id='contact-form-7-css'  href='<?php echo base_url();?>assets/web/plugins/contact-form-7/includes/css/styles9dff.css?ver=5.3.2' type='text/css' media='all' />
       <link rel='stylesheet' id='dashicons-css'  href='<?php echo base_url();?>assets/web/css/dashicons.mind96d.css' type='text/css' media='all' />
@@ -160,6 +225,36 @@ font-weight: 900;
       <link rel="icon" href="<?php echo base_url();?>assets/web/uploads/sites/2/2017/03/favicon-80px.png" sizes="192x192" />
       <link rel="apple-touch-icon" href="<?php echo base_url();?>assets/web/uploads/sites/2/2017/03/favicon-80px.png" />
       <meta name="msapplication-TileImage" content="http://bold-news.bold-themes.com/main-demo/wp-content/uploads/sites/2/2017/03/favicon-80px.png" />
+       <script>
+      // Initialize and add the map
+      function initMap() {
+        // The location of Uluru
+        const satasme = { lat: 6.9195, lng: 80.0997 };
+        // The map, centered at Uluru
+        const map = new google.maps.Map(document.getElementById("map"), {
+          zoom: 15,
+          center: satasme,
+        });
+        // The marker, positioned at Uluru
+        const marker = new google.maps.Marker({
+          position: satasme,
+          map: map,
+        });
+      }
+    </script>
+    <!-- New -->
+
+<script async
+  src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCCUyOIgp8YMYfJco2CxMmqUvrpU2D-4BY&libraries=geometry&callback=initMap">
+</script>
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+
+<!-- end of New -->
    </head>
    <body class="page-template-default page page-id-2347 page-child parent-pageid-3667 theme-bold-news bt_bb_plugin_active bt_bb_fe_preview_toggle woocommerce-no-js bodyPreloader btMenuLeftEnabled btMenuBelowLogo btStickyEnabled btLightSkin btNoDashInSidebar btTopToolsInMenuArea btRemovePreloader btSoftRoundedButtons btNoSidebar" data-autoplay="0" >
       <div class="btPageWrap" id="top">
@@ -170,15 +265,45 @@ font-weight: 900;
       <div class="row">
         <div class="col-md-8">
           <div class="ts-date">
-            <i class="fa fa-calendar-check-o"></i>May 29, 2017
+            <i class="fa fa-calendar-check-o"></i>
+            <?php echo date('d F, Y (l)'); ?>
           </div>
           <ul class="unstyled top-nav">
-            <li><a href="#">About</a></li>
-            <li><a href="#">Write for Us</a></li>
-            <li><a href="#">Advertise</a></li>
-            <li><a href="#">Contact</a></li>
+            <li><a href="<?php echo base_url();?>web/aboutus">About Us</a></li>
+               <?php 
+               if( $this->session->userdata('Web_UID') > 0) { ?>
+           <li><a href="<?php echo base_url();?>web/banner">Advertise</a></li>
+            <?php  } else { ?>
+              <li><a href="<?php echo base_url();?>web/login">Advertise</a></li>
+             <?php  } ?>
+           
+            <li><a href="<?php echo base_url();?>web/contactus">Contact Us</a></li>
+            <li><a href="<?php echo base_url();?>web/sinhala">Sinhala</a></li>
+            <li><a href="<?php echo base_url();?>web/index">English</a></li>
+            <li><a href="<?php echo base_url();?>web/tamil">Tamil</a></li>
           </ul>
         </div><!--/ Top bar left end -->
+       <?php      
+       $data = get_ip_address(); 
+function get_ip_address(){
+    foreach (array('HTTP_CLIENT_IP', 'HTTP_X_FORWARDED_FOR', 'HTTP_X_FORWARDED', 'HTTP_X_CLUSTER_CLIENT_IP', 'HTTP_FORWARDED_FOR', 'HTTP_FORWARDED', 'REMOTE_ADDR') as $key){
+        if (array_key_exists($key, $_SERVER) === true){
+            foreach (explode(',', $_SERVER[$key]) as $ip){
+                $ip = trim($ip); // just to be safe
+
+                if (filter_var($ip, FILTER_VALIDATE_IP, FILTER_FLAG_NO_PRIV_RANGE | FILTER_FLAG_NO_RES_RANGE) !== false){
+                   echo '<script language="javascript">alert("'.$ip.'"); </script>';
+                    echo $ip;
+                  
+                }
+            }
+        }
+    }
+}
+
+?>
+ 
+
 
         <div class="col-md-4 top-social text-lg-right text-md-center">
           <ul class="unstyled">
@@ -192,15 +317,27 @@ font-weight: 900;
               <a title="Google+" href="#">
                 <span class="social-icon"><i class="fa fa-google-plus"></i></span>
               </a>
-              <a title="Linkdin" href="#">
+             <!--  <a title="Linkdin" href="#">
                 <span class="social-icon"><i class="fa fa-linkedin"></i></span>
-              </a>
-              <a title="Rss" href="#">
+              </a> -->
+             <!--  <a title="Rss" href="#">
                 <span class="social-icon"><i class="fa fa-rss"></i></span>
-              </a>
-              <a title="Skype" href="#">
+              </a> -->
+              <!-- <a title="Skype" href="#">
                 <span class="social-icon"><i class="fa fa-skype"></i></span>
-              </a>
+              </a> -->
+               <li><a href="<?php echo base_url();?>web/signup">Sign up</a></li>
+               <!-- <li><a href="<?php echo base_url();?>index.php/login/logout"><i class="icon-switch2"></i> Logout</a></li> -->
+               <?php 
+               if( $this->session->userdata('Web_UID') > 0) { ?>
+               <?php  echo $this->session->userdata('Web_FullName'); ?>
+               <li><a href="<?php echo base_url();?>web/logout">Log out</a></li>
+
+            <?php  } else { ?>
+              <li><a href="<?php echo base_url();?>web/login">Login</a></li>
+             <?php  } ?>
+                
+             
             </li>
           </ul><!-- Ul end -->
         </div><!--/ Top social col end -->
@@ -213,13 +350,14 @@ font-weight: 900;
                   <span class="btHorizontalMenuTrigger">&nbsp;<span class="btIco btIcoDefaultType"><a href="#" target="_self" data-ico-fa="&#xf0c9;" class="btIcoHolder"></a></span></span>
                   <div class="logo">
                      <span>
-                     <a href="#"><img class="btMainLogo" data-hw="4.84" src="<?php echo base_url();?>assets/web/uploads/sites/2/2017/02/bold-news-logo.png" alt="Bold News"></a></span>
+                     <a href="<?php echo base_url();?>web"><img class="btMainLogo" data-hw="4.84" src="<?php echo base_url();?>assets/web/uploads/sites/2/2017/02/bold-news-logo.png" alt="Bold News"></a></span>
                   </div>
                   <!-- /logo -->
                   <div class="topBarInLogoArea">
                      <div class="topBarInLogoAreaCell">
                         <div class="btTopBox widget_bt_banner_widget no-border">
-                           <div class="bt_banner no-border" ><a href="https://themeforest.net/item/industrial-manufacturing-factory-wordpress-theme/18939815?ref=BoldThemes" target="_blank"><img src="<?php echo base_url();?>assets/web/uploads/sites/2/2017/03/Industrial-970x90-banner.jpg" /></a></div>
+                           <div class="bt_banner no-border" >
+                            <a href="<?php echo base_url();?>index.php/web/banner" target="_blank"><img src="<?php echo base_url();?>assets/web/uploads/sites/2/2017/03/Industrial-970x90-banner.jpg" /></a></div>
                         </div>
                      </div>
                      <!-- /topBarInLogoAreaCell -->
@@ -231,7 +369,7 @@ font-weight: 900;
                   <div class="menuPort">
                      <div class="logoBelowInline">
                         <span>
-                        <a href="http://bold-news.bold-themes.com/main-demo/"><img class="btMainLogo" data-hw="4.84" src="<?php echo base_url();?>assets/web/uploads/sites/2/2017/02/bold-news-logo.png" alt="Bold News"></a>							
+                        <a href="<?php echo base_url();?>"><img class="btMainLogo" data-hw="4.84" src="<?php echo base_url();?>assets/web/uploads/sites/2/2017/02/bold-news-logo.png" alt="Bold News"></a>							
                         </span>
                      </div>
                      <!-- /logo -->
@@ -248,7 +386,8 @@ font-weight: 900;
                                  <span class="btIco btIcoDefaultType btIcoDefaultColor"><a href="#" target="_self" data-ico-fa="&#xf002;" class="btIcoHolder"></a></span>
                                  <div class="btSearchInner gutter" role="search">
                                     <div class="btSearchInnerContent port">
-                                       <form action="http://bold-news.bold-themes.com/main-demo/" method="get"><input type="text" name="s" placeholder="Looking for..." class="untouched">
+                                       <form action="http://bold-news.bold-themes.com/main-demo/" method="get">
+                                        <input type="text" name="s" placeholder="Looking for..." class="untouched">
                                           <button type="submit" data-icon="&#xf105;"></button>
                                        </form>
                                        <div class="btSearchInnerClose"><span class="btIco "><a href="#" target="_self" data-ico-fa="&#xf00d;" class="btIcoHolder"></a></span></div>
@@ -260,14 +399,33 @@ font-weight: 900;
                         <!-- /topBarInMenu -->
                      </div>
                      <!-- /topBarInMenuCell -->
-                     <nav>
-                        <ul id="menu-primary-menu" class="menu">                          
-                              <?php  for($i=0; $i < count($category_list);++$i){?>
-                           <li id="menu-item-3950" class="btMenuWideDropdown bt_mega_menu menu-item menu-item-type-post_type menu-item-object-page menu-item-3950"><span class="bt_mega_menu_title"><a href="<?php echo base_url();?>index.php/news/add_news?page=news"><?php echo $category_list[$i]['category']; ?></a> </span>                              
-                           </li>
-                           <?php } ?>                                                
-                        </ul>
-                     </nav>
+                     
+<nav>
+   <!-- <?php echo $this->uri->segment(2); ?>  -->
+  <ul id="menu-primary-menu" class="menu">                          
+       
+        <?php  if(strpos($this->uri->segment(2), 'sinhala') !==false ){ ?>
+           <?php  for($i=0; $i < count($category_list);++$i){?>
+<li id="menu-item-3950"  class="btMenuWideDropdown bt_mega_menu menu-item menu-item-type-post_type menu-item-object-page menu-item-3950"><span class="bt_mega_menu_title" style="color:red;">
+  <a href="<?php echo base_url();?>web/sinhala_category/<?php echo $category_list[$i]['id']; ?>"><?php echo $category_list[$i]['category']; ?></a> </span>                              
+     </li>
+       <?php } ?>  
+     <?php   } else if (strpos($this->uri->segment(2), 'tamil') !==false){ ?>
+       <?php  for($i=0; $i < count($category_list);++$i) { ?>
+<li id="menu-item-3950" class="btMenuWideDropdown bt_mega_menu menu-item menu-item-type-post_type menu-item-object-page menu-item-3950"><span class="bt_mega_menu_title">
+  <a href="<?php echo base_url();?>web/tamil_category/<?php echo $category_list[$i]['id']; ?>"><?php echo $category_list[$i]['category']; ?></a> </span>                              
+     </li>
+       <?php } ?> 
+         <?php }  else { ?>
+           <?php  for($i=0; $i < count($category_list);++$i) { ?>
+    <li id="menu-item-3950" class="btMenuWideDropdown bt_mega_menu menu-item menu-item-type-post_type menu-item-object-page menu-item-3950"><span class="bt_mega_menu_title">
+  <a href="<?php echo base_url();?>web/category/<?php echo $category_list[$i]['id']; ?>"><?php echo $category_list[$i]['category']; ?></a> </span>                              
+     </li> 
+       <?php } ?> 
+      <?php } ?> 
+                                                 
+  </ul>
+</nav>
                   </div>
                   <!-- .menuPort -->
                </div>

@@ -54,16 +54,23 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 											<div class="collapse in" id="demo1">
 												<div class="form-group">
-													<label class="col-lg-3 control-label">Video Name<span class="text-danger">*</label>
+													<label class="col-lg-3 control-label">Video Name<span class="text-danger"> *</label>
 													<div class="col-lg-9">
 														<input type="text" required name="video" class="form-control" placeholder="Enter Video name">
 													</div>
 												</div>
 
 												<div class="form-group">
-													<label class="col-lg-3 control-label">Video Link<span class="text-danger">*</label>
+													<label class="col-lg-3 control-label">Video Link<span class="text-danger"> *</label>
 													<div class="col-lg-9">
 														<input type="text" required name="link" class="form-control" placeholder="Enter Video link">
+													</div>
+												</div>
+
+												<div class="form-group">
+													<label class="col-lg-3 control-label">Video Thumbnail<span class="text-danger"> *</label>
+													<div class="col-lg-9">
+														<input type="text" required name="Thumbnail" class="form-control" placeholder="Enter Video Thumbnail">
 													</div>
 												</div>
 												
